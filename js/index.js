@@ -20,16 +20,31 @@ btn_movies.addEventListener('click', function(){
 function parcial_Cuerpo(){
     for (let i = 0; i < 4; i++) {
         cuerpo.innerHTML = cuerpo.innerHTML +
-        ` <div class="contenedor_principal_movie ">
-        <a class="image_movie " href="#"><img src="../img_parcial/Demo.jfif" alt="Imagen">
-             <div class="circle">
-                     <i> 8.7</i>
-             </div> 
+        `  <div class="contenedor_principal_movie ">
+        <a class="image_movie " href="#">   <img src="../img_parcial/Demo.jfif" alt="Imagen">
+            <div class="circle">
+                    <i>8.7</i>
+            </div> 
         </a>
-                <div class="contenedor_secundario_movie">
-                    Pelicula 1
+            <div class="contenedor_secundario_movie">
+                <div class="title_movie bold flex flex_ajustable">
+                    <label for="">Captain America 3</label>
                 </div>
-        </div>`;
+                <div class="classification_movie">
+                    <label for="">Captain America 3</label>
+                </div>
+                
+                <div class="duration_movie ">
+                    <label for="">120 min</label>
+                </div>
+                
+                <div class="description_movie flex ">
+                    <textarea    for="" readonly> hjsajhsahjsahjsahjsajhsajhsajhsahjsajhsahjsahjsahjsahjsahjsahjsa
+                    </textarea>
+                </div>
+                
+            </div>
+    </div>`;
     }
 }
 
