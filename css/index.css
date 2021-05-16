@@ -2,11 +2,14 @@ body{
     font-size: 100%;
     width: 99%;
     height: 100vh;
+    /* background-image: linear-gradient(to right bottom, #000000, #100a0a, #1a1310, #211a13, #252116, #242518, #21291b, #1c2d21, #132d27, #092d2d, #042d34, #082b39); */
+    background-image: linear-gradient(to left top, #000000, #100a0a, #1a1310, #211a13, #252116, #242518, #21291b, #1c2d21, #132d27, #092d2d, #042d34, #082b39);
+    /* background-image: linear-gradient(to left top, #000000, #0c0509, #130b12, #16101a, #161522, #161522, #161522, #161522, #16101a, #130b12, #0c0509, #000000); */
+    /* background-image: linear-gradient(to bottom, #000000, #0c0509, #130b12, #16101a, #161522, #161522, #161522, #161522, #16101a, #130b12, #0c0509, #000000); */
 }
 
  .container{
      width: 100%;
-   
 }  
 .container_header{
     display: grid;
@@ -79,11 +82,9 @@ footer div{
 /* -------------- */
 .menu_dinamico{
   display: none; 
-  margin-top: 40px;
+  margin-top: 35px;
   margin-left:1% !important;
-  align-content: flex-start;
-  width: 50% !important;
-
+  width: 94% !important;
 }
 
 .letraverde{
@@ -96,27 +97,39 @@ footer div{
 
  .menu_dinamico ul{
      list-style: none;
+     margin: 0%;
+     padding: 0%;
+    
  }
 
+ .menu_dinamico ul li {
+    margin-top: 15px;
+    text-align: center;
+    align-items: center;
+}
+
  .overlay{
-    background-color: rgba(0, 0, 0, .5) !important;
+    background-color: rgba(0, 0, 0, .8) !important;
     background-size: cover;
     background-position: center;
     position: absolute;
+    width: 100%;
     z-index: 4;
+    border-radius: 15px;
 }
 
  .menu_dinamico ul li a{
     color: #3ed2bf;
+   
     text-decoration: none;
     font-size: 120%;
+    border-bottom: solid;
 }
 
 .cuerpo{
     height: 84vh;
-    width: 100%;
     margin: 1%;
-    background-color: #f4f5f9;
+    
     z-index: -2;
     overflow-y: auto;
     overflow-x: hidden;
@@ -125,9 +138,9 @@ footer div{
 .contenedor_principal_movie{
 background-color: transparent;
 margin: 3% 3% 0% 3%;
-width: 100%;
 height: 27vh;
 z-index: 0;
+max-width: 700px;
 }
 .contenedor_principal_movie .contenedor_secundario_movie{
     align-items: flex-end !important;
@@ -143,31 +156,39 @@ z-index: 0;
     flex-wrap: wrap;
 }
 .contenedor_secundario_movie{
-
-    background-color: #ffffff;
+    /* background-image: radial-gradient(circle, #051937, #171e35, #222333, #2a2932, #303030); */
+    /* background-color: #051937; */
+    background-color: transparent;
+    /* background-image: radial-gradient(circle, #051937, #171228, #190a1a, #12040d, #000000); */
     height: 88%;
     width: 98%;
     z-index: 1;
-  
-   
+    border-width: 1px;
+    border-style: solid;
+    border-color: #3ed2bf;
+    border-radius: 11px;
+    color: white;
 }
 
 .image_movie{
+    background-color: transparent;
     z-index: 3;
+    float: left ;
     height: 94%;
     width: 33%;
+    margin-left: 3%;
 }
 .image_movie img{
-    margin-left: 3%;
-    float: left ;
-    height: 92%;
-    width: 34%;
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
     
 }
 .circle{
     width: 11%;
     height: 21%;
-    background-color:  #3ed2bf;;
+    z-index: 4;
+    background-color:  #3ed2bf;
     border-radius: 50%;
     margin-top: 33%; 
     margin-left: -6%;
@@ -206,7 +227,6 @@ z-index: 0;
 .duration_movie label{
     font-size: 80%;
     background-color: #fb9f4f ;
-    color: white;
     width: 22.5%;
     height: 60%;
     float: left ;
@@ -217,17 +237,24 @@ z-index: 0;
 }
 
 .description_movie{
-    float: initial ;
-    margin-top: 1%;
-    max-width: 55% !important;
-    max-height: 50% !important;
+    float: right ;
+    margin-top: 6px;
+    margin-right: 25px;
+    width: 160px !important;
+    height: 57px !important;
     
     
 }
-.description_movie textarea{
+.description_movie p{
+    Max-width: 160px !important;
+    Max-height: 57px !important;
+    font-size: 70%;
     background-color: transparent;
-    border: none;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
+    overflow-x: hidden;
+    padding: 0px;
+    margin: 0px;
+    text-justify: auto;
 }
 
 /* -------------- */
@@ -277,3 +304,5 @@ footer{
 .ocultardiv{
     display: none;
 }
+
+/* Menu */

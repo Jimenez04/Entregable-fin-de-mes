@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../img_parcial/fontawesome-free-5.15.3-web/css/all.css">
     <title>versión 1</title>
 </head>
 <body>
@@ -14,14 +15,15 @@
             <div class=".justificar_izquierda">
                 <div> <button class="btn_menu" id="btn_barra_menu"><i class="fas fa-bars"></i></button> </div>
             </div>
+            
             <nav class="menu_dinamico overlay " id="menu_dinamico">
-                <ul>
-                    <li><a href="#" class="btn_inicio">Inicio</a></li>
-                    <li><a href="#" class="btn_speaker">Speakers</a></li>
-                    <li><a href="#" class="btn_events">Events</a></li>
-                    <li><a href="#" class="btn_contact">Contact</a></li>
-                    <li><a href="#" class="btn_about">About</a></li>
+                <ul id="lista">
+                    <li><a href="./prueba.html" class="btn_inicio">Inicio</a></li>
+                    <li><a href="#" class="btn_contact">Contacto</a></li>
+                    <li><a href="#" class="btn_about">Nosotros</a></li>
+                    <li><a href="#" class="btn_help">Ayuda</a></li>
                 </ul>
+
             </nav>
             <div class="justificar_centro">
                 <select class="select_Movies"  name="" id="select_Movies">
@@ -39,13 +41,13 @@
 
     <div class="cuerpo flex flex_ajustable" id="cuerpo">
        
-        <!-- <iframe src="./prueba.html"></iframe> -->
        <div class="contenedor_principal_movie ">
             <a class="image_movie " href="#">   <img src="../img_parcial/Demo.jfif" alt="Imagen">
-                <div class="circle">
-                        <i>8.7</i>
-                </div> 
+               
             </a>
+            <a class="circle">
+                <i>8.7</i>
+            </a> 
                 <div class="contenedor_secundario_movie">
                     <div class="title_movie bold flex flex_ajustable">
                         <label for="">Captain America 3</label>
@@ -58,8 +60,8 @@
                         <label for="">120 min</label>
                     </div>
                     
-                    <div class="description_movie flex ">
-                        <textarea    for="" readonly>Pelicula Muy buena</textarea>
+                    <div class="description_movie">
+                        <p    for="" readonly>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
                     </div>
                     
                 </div>
@@ -85,7 +87,7 @@
                     <button class="btn_cuenta"><i class="fas fa-user"></i></button>
                 </div>
     </footer>
-    <script src="https://kit.fontawesome.com/fe55e6ecf5.js" crossorigin="anonymous"></script>
+    <script src="../js/jquery"></script>
     <script type="text/javascript" src="../js/index.js"></script>
     
 </body>
