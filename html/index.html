@@ -2,93 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../img_parcial/fontawesome-free-5.15.3-web/css/all.css">
-    <title>versión 1</title>
+    <title>B84135</title>
 </head>
 <body>
     <header >
-        <div class="container_header" id="header">
-            <div class=".justificar_izquierda">
-                <div> <button class="btn_menu" id="btn_barra_menu"><i class="fas fa-bars"></i></button> </div>
+        <div class="container_header grid" id="header">
+            <div class="btn_menu grid sin_borde fondo_transpa justificar_izquierda">
+                <button class="sin_borde fondo_transpa animacion" id="btn_barra_menu"><i class="fas fa-bars"></i></button> 
             </div>
-            
-            <nav class="menu_dinamico overlay " id="menu_dinamico">
-                <ul id="lista">
-                    <li><a href="./prueba.html" class="btn_inicio">Inicio</a></li>
-                    <li><a href="#" class="btn_contact">Contacto</a></li>
-                    <li><a href="#" class="btn_about">Nosotros</a></li>
-                    <li><a href="#" class="btn_help">Ayuda</a></li>
-                </ul>
-
-            </nav>
-            <div class="justificar_centro">
-                <select class="select_Movies"  name="" id="select_Movies">
-                    <option value="">Trending Movies</option>
-                    <option value="">Movie 1</option>
-                    <option value="">Movie 2</option>
-                    <option value="">Movie 3</option>
+            <div class="menu_dinamico overlay fondo_transpa" id="menu_dinamico">
+                <nav class="">
+                    <ul id="lista">
+                        <li><a href="#" class="btn_inicio color_letras animacion ">Inicio</a></li>
+                        <li><a href="#" class="btn_contact color_letras animacion">Contacto</a></li>
+                        <li><a href="#" class="btn_about color_letras animacion">Nosotros</a></li>
+                        <li><a href="#" class="btn_help color_letras animacion">Ayuda</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="justificar_centro grid select_Movies">
+                <select class="color_letras fondo_transpa sin_borde"  name="" id="select_Movies">
+                    <option value="28" >Mi Sala</option>
+                    <option value="28">Recomendaciones</option>
+                    <option value="28">Drama</option>
+                    <option value="28">Series</option>
                 </select>
             </div>
-            <div class="justificar_derecha">
-                <button class="btn_buscar justificar_izquierda"><i class="fas fa-search justificar_izquierda"></i></button>
+            <div class="btn_buscar justificar_derecha grid">
+                <button class="sin_borde fondo_transpa animacion"><i class="fas fa-search"></i></button>
             </div>
         </div>
     </header>
-
-    <div class="cuerpo flex flex_ajustable" id="cuerpo">
-       
-       <div class="contenedor_principal_movie ">
-            <a class="image_movie " href="#">   <img src="../img_parcial/Demo.jfif" alt="Imagen">
-               
-            </a>
-            <a class="circle">
-                <i>8.7</i>
-            </a> 
-                <div class="contenedor_secundario_movie">
-                    <div class="title_movie bold flex flex_ajustable">
-                        <label for="">Captain America 3</label>
-                    </div>
-                    <div class="classification_movie">
-                        <label for="">Captain America 3</label>
-                    </div>
-                    
-                    <div class="duration_movie ">
-                        <label for="">120 min</label>
-                    </div>
-                    
-                    <div class="description_movie">
-                        <p    for="" readonly>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-                    </div>
-                    
-                </div>
-        </div>
-
-      
- 
+    <div class="cuerpo flex  flex_ajustable fondo_transpa" >
+        <Label class="bold flex" >Mi sala</Label>
+         <div class="carousel flex flex_ajustable" id="miSala_JS"></div>
+         <hr>
+         <Label class="bold flex">Recomendaciones</Label>
+        <div class="carousel flex flex_ajustable" id="recomendaciones_js"></div>
+        <hr>
+        <Label class="bold flex">Drama</Label>
+        <div class="carousel flex flex_ajustable" id="drama_js"></div>
+        <hr>
+        <Label class="bold flex">Series</Label>
+        <div class="carousel flex flex_ajustable" id="series_js"></div>
     </div>
-        
-
-    </div>
-    <footer class="hola" id="footer">
+    <footer id="footer" class="grid">
                 <div>
-                    <button class="btn_movie" id="section_movies"><i class="fas fa-film"></i></button>
+                    <button class="btn_movie sin_borde fondo_transpa color_letras" id="section_movies"><i class="fas fa-film"></i></button>
                 </div>
                 <div>
-                    <button class="btn_descarga"><i class="far fa-arrow-alt-circle-down"></i></button>
+                    <button class="btn_descarga sin_borde fondo_transpa color_letras"><i class="far fa-arrow-alt-circle-down"></i></button>
                 </div>
                 <div>
-                    <button class="item"><i class="fas fa-circle-notch"></i></button>
+                    <button class="item color_letras sin_borde fondo_transpa"><i class="fas fa-circle-notch"></i></button>
                 </div>
                 <div>
-                    <button class="btn_cuenta"><i class="fas fa-user"></i></button>
+                    <button class="btn_cuenta sin_borde color_letras fondo_transpa"><i class="fas fa-user"></i></button>
                 </div>
     </footer>
     <script src="../js/jquery"></script>
     <script type="text/javascript" src="../js/index.js"></script>
-    
+    <script type="text/javascript" src="../js/menu.js"></script>
 </body>
 </html>
+
+
