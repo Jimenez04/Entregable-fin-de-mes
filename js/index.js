@@ -1,9 +1,13 @@
 var btn_menu =  document.getElementById("btn_barra_menu");
+//
 var misala =  document.getElementById("miSala_JS");
 var recomendaciones =  document.getElementById("recomendaciones_js");
 var drama =  document.getElementById("drama_js");
 var series =  document.getElementById("series_js");
+//
+var contenidocuerpo =  document.getElementById("cuerpo_js");
 var btn_movies =  document.getElementById("section_movies");
+
 var selector =  document.getElementById("select_Movies");
 
 var contenedores = [misala, series, drama, recomendaciones];
@@ -26,7 +30,8 @@ selector.addEventListener("onselect", ObtenerPeliculas(selector.options[selector
   });
 //////////////////////////////////////////////////////////////////////////////
 
-btn_movies.addEventListener('click', RecargarCuerpo()); //Quitar este
+
+//Quitar este
 window.addEventListener('resize', function() { RecargarCuerpo();});
 window.addEventListener("orientationchange", function() {RecargarCuerpo();}, false);
 
@@ -151,6 +156,13 @@ function parcial_Cuerpo(item){
          opciones.appendChild(document.createTextNode(element.name));
          opciones.value = element.id;
          selector.appendChild(opciones);
+         var titulo = document.createElement('label');
+         titulo.textContent = element.name;
+         var contenedor = document.createElement('div');
+         contenedor.classList.add('carousel','flex','flex_ajustable');
+         contenedor.setAttribute("id", element.name + "_js");
+         contenedor.setAttribute("value", element.id);
+         contenidocuerpo.append(contenedor);
      })
        })
        .catch( err => {
