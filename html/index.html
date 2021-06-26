@@ -27,10 +27,7 @@
             </div>
             <div class="justificar_centro grid select_Movies">
                 <select class="color_letras fondo_transpa sin_borde"  name="" id="select_Movies">
-                    <option value="28" >Mi Sala</option>
-                    <option value="28">Recomendaciones</option>
-                    <option value="28">Drama</option>
-                    <option value="28">Series</option>
+                    <option value="0" >Popular</option>
                 </select>
             </div>
             <div class="btn_buscar justificar_derecha grid">
@@ -39,22 +36,14 @@
         </div>
     </header>
     <div class="cuerpo flex  flex_ajustable fondo_transpa" id="cuerpo_js" >
-        <Label class="bold flex" >Mi sala</Label>
-         <div class="carousel flex flex_ajustable" id="miSala_JS"></div>
+        <Label class="bold flex" >Recomendaciones</Label>
+         <div class="carousel flex flex_ajustable" id="Popular_js"></div>
          <hr>
-         <Label class="bold flex">Recomendaciones</Label>
-        <div class="carousel flex flex_ajustable" id="recomendaciones_js"></div>
-        <hr>
-        <Label class="bold flex">Drama</Label>
-        <div class="carousel flex flex_ajustable" id="drama_js"></div>
-        <hr>
-        <Label class="bold flex">Series</Label>
-        <div class="carousel flex flex_ajustable" id="series_js"></div>
     </div>
     <footer id="footer" class="grid">
                 <div>
-                    <form method="get" action="Descrip_Peli.html">
-                        <button class="btn_movie sin_borde fondo_transpa color_letras" id="section_movies" ><i class="fas fa-film"></i></button>
+                    <form method="GET" action="Descrip_Peli.html">
+                        <button type="hidden" class="btn_movie sin_borde fondo_transpa color_letras" name="id" id="1"  value="1"><i  class="fas fa-film"></i></button>
                     </form>
                 </div>
                 <div>
