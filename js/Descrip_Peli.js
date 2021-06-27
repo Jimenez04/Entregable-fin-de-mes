@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var titulo = document.createElement('label');
     titulo.textContent = "Para los Playitos";
     body2.append(titulo);   
-    console.log(prodId);
+    console.log("El id es: "+prodId);
 }
 )
 
