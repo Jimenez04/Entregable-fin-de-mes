@@ -20,50 +20,34 @@ document.addEventListener("DOMContentLoaded", function(){
  );
 // selector.addEventListener("onselect", ObtenerPeliculasPorGenero(selector.options[selector.selectedIndex].value, selector.options[selector.selectedIndex].text+"_js"));
  document.getElementById('select_Movies').addEventListener('change', function() {
+    removerhijos();
     ObtenerPeliculasPorGenero(selector.options[selector.selectedIndex].value, selector.options[selector.selectedIndex].text+"_js")
   });
 //////////////////////////////////////////////////////////////////////////////
 
 
 //Quitar este
-//window.addEventListener('resize', function() { RecargarCuerpo();});
-//window.addEventListener("orientationchange", function() {RecargarCuerpo();}, false);
+window.addEventListener('resize', function() { RecargarCuerpo();});
+window.addEventListener("orientationchange", function() {RecargarCuerpo();}, false);
 
 async function RecargarCuerpo(){
+       removerhijos();
        await ObtenerGenerosDePeliculas();
-        removerhijos();
         if (screen.width > 450 || screen.availHeight < screen.availWidth) {
         ObtenerTodoConCategoria();
-       console.log(contenedores);
         }else if(screen.width < 450 ){
+        removerhijos();
         ObtenerPeliculasPorGenero(selector.options[selector.selectedIndex].value, selector.options[selector.selectedIndex].text+"_js");
         }
     }
-    function ObtenerTodoConCategoria(){
-    //     contenedores.forEach(element => {
-    //         console.log(element);
-    //     });
-    //   //  for (let i = 2; i < contenedores.length; i++) {
-    //    //  //   ObtenerPeliculasPorGenero(id_contenedores[i], contenedores[i]+"_js");
-    //   //  }
-    //     // Array.from(document.querySelector("#select_Movies").options).forEach(function(option_element) {
-    //     //     console.log(option_element);
-    //     //     ObtenerPeliculasPorGenero(option_element.value, option_element.text+"_js");
-    //     // });
-    //     i = 0;
-    // console.log(id_contenedores.length);        
-        
-    //     while(i<contenedores.length){
-    //         ObtenerPeliculasPorGenero(id_contenedores[i], contenedores[i]);
-    //         i++;
-    //     }
 
+   async function ObtenerTodoConCategoria(){
         Array.from(document.querySelector("#select_Movies").options).forEach(function(option_element) {
             ObtenerPeliculasPorGenero(option_element.value, option_element.text+"_js");
+            i++;
         });
-
-
     }
+    
     async function ObtenerGenerosDePeliculas()
     {
        await fetch(url + full_categorias + "?api_key="+key+"&language=es")
@@ -85,13 +69,13 @@ async function RecargarCuerpo(){
          var titulo = document.createElement('label');
          titulo.textContent = element.name;
          titulo.classList.add('bold','flex');
+         contenidocuerpo.append(titulo);
          var contenedor = document.createElement('div');
          contenedor.classList.add('carousel','flex','flex_ajustable');
          contenedor.setAttribute("id", element.name + "_js");
          contenedor.setAttribute("value", element.id);
-         contenidocuerpo.append(contenedor);
          var salto = document.createElement('hr');
-         contenidocuerpo.append(titulo,salto);
+         contenidocuerpo.append(contenedor,salto);
          contenedores.push(element.name + "_js");
          id_contenedores.push(element.id);
      })
@@ -119,7 +103,6 @@ async function RecargarCuerpo(){
        })
        .then( resultadotext => {
          let categorias = JSON.parse(resultadotext).results;
-            removerhijos();
             categorias.forEach(function (element)
             {
                Cuerpo(element,contenedor);
@@ -131,15 +114,14 @@ async function RecargarCuerpo(){
     }  
     
 
-   async function Cuerpo(item,div_contenedor){
-       try {
+    function Cuerpo(item,div_contenedor){
         var cuerpohtml =  document.getElementById(div_contenedor);
         var contenedor = document.createElement('div');
         contenedor.classList.add('contenedor_principal_movie');
             var etiq_a = document.createElement('div');
             etiq_a.classList.add('image_movie')
                     var etiq_img = document.createElement('img');
-                    etiq_img.src = await Obtenerimagenes(item.poster_path);
+                   etiq_img.src = urlimg + item.poster_path;
                     etiq_img.alt = "Error al cargar";
                 var etiq_div_circle = document.createElement('a');
                 etiq_div_circle.classList.add('circle');
@@ -173,23 +155,7 @@ async function RecargarCuerpo(){
                 etiq_div_description_movie);
         contenedor.append(etiq_a, etiq_div_circle, etiq_coontenedor_secun);  
         cuerpohtml.append(contenedor);
-       } catch (error) {
-           
-       }
-       
     }
-
-   async function Obtenerimagenes(img)
-    {   console.log(img);
-        if(img!= "null"){
-        var imagen = new Image();
-        imagen.src = urlimg + img;
-        return  imagen.src;
-    }else {
-        return null;
-    }
-       
-    }  
 
     function removerhijos() {
         i = 0;
