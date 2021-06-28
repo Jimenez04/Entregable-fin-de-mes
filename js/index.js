@@ -5,7 +5,6 @@ var btn_movies =  document.getElementById("section_movies");
 var selector =  document.getElementById("select_Movies");
 
 var contenedores = ["Popular_js"] ;
-var id_contenedores = [0] ;
 
 var url = "https://api.themoviedb.org/3/";
 var full_categorias = 'genre/movie/list';
@@ -23,10 +22,8 @@ document.addEventListener("DOMContentLoaded", function(){
     removerhijos();
     ObtenerPeliculasPorGenero(selector.options[selector.selectedIndex].value, selector.options[selector.selectedIndex].text+"_js")
   });
-//////////////////////////////////////////////////////////////////////////////
-
-
-//Quitar este
+/////////////
+//Quitar este, quizas
 window.addEventListener('resize', function() { RecargarCuerpo();});
 window.addEventListener("orientationchange", function() {RecargarCuerpo();}, false);
 
@@ -77,7 +74,6 @@ async function RecargarCuerpo(){
          var salto = document.createElement('hr');
          contenidocuerpo.append(contenedor,salto);
          contenedores.push(element.name + "_js");
-         id_contenedores.push(element.id);
      })
        })
        .catch( err => {
@@ -112,37 +108,24 @@ async function RecargarCuerpo(){
          console.log(err);
        });
     }  
-    
 
     function Cuerpo(item,div_contenedor){
         var cuerpohtml =  document.getElementById(div_contenedor);
-
-        var formu = document.createElement('form');
-        formu.setAttribute("method","GET");
-        formu.setAttribute("action","Descrip_Peli.html");
-
         var contenedor = document.createElement('div');
+        contenedor.setAttribute("onclick","window.location='Descrip_Peli.html?id="+item.id +"';");
         contenedor.classList.add('contenedor_principal_movie');
             var etiq_a = document.createElement('div');
-                    var id_link = document.createElement('input');
-                    id_link.setAttribute("type","hidden");
-                    id_link.setAttribute("name","id");
-                    id_link.setAttribute("value",item.id);
-                    etiq_a.classList.add('image_movie')
+                    etiq_a.classList.add('image_movie');
                     //var etiq_img = document.createElement('img');
-                    var etiq_img = document.createElement('input');
-                    etiq_img.setAttribute("type","image");
-
-                   etiq_img.src = urlimg + item.poster_path;
+                    var etiq_img = document.createElement('img');
+                    etiq_img.src = urlimg + item.poster_path;
                     etiq_img.alt = "Error al cargar";
-                    formu.append(etiq_img, id_link);
-
                 var etiq_div_circle = document.createElement('a');
                 etiq_div_circle.classList.add('circle');
                     var etiq_i = document.createElement('i');
                     etiq_i.append(item.vote_average);
                 etiq_div_circle.append(etiq_i); 
-            etiq_a.append(formu ); 
+            etiq_a.append(etiq_img); 
             var etiq_coontenedor_secun = document.createElement('div');
             etiq_coontenedor_secun.classList.add('contenedor_secundario_movie');
                 var etiq_div_title_movie = document.createElement('div');
