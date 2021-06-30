@@ -4,7 +4,6 @@
  */
 
 var body2 = document.getElementById("body2");
-var back = document.getElementById("back");
 
 // var url  = document.location.href = 'Descrip_Peli.html/id=section_movies';
 var prodId = getParameterByName('id');
@@ -17,17 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
      contenidocuerpo.append(contenedor); */
 
     /*  var contenidocuerpo =  document.getElementById("cuerpo_js"); */
-    var titulo = document.createElement('label');
-    titulo.textContent = "Para los Playitos";
-    body2.append(titulo);
-    console.log("El id es: " + prodId);
-    alert("El ID es: " + prodId);
 }
 )
-
-back.addEventListener("click", function () {
-    history.back();
-});
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
