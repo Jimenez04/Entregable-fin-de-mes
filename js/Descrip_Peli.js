@@ -3,19 +3,14 @@
  * @return String
  */
 
+ var url = "https://api.themoviedb.org/3/";
+ var key = '133e62f28b7a78182442c73f2c90e8b9';
+ var urlimg = 'http://image.tmdb.org/t/p/w500';
+
 var body2 = document.getElementById("body2");
 
-// var url  = document.location.href = 'Descrip_Peli.html/id=section_movies';
-var prodId = getParameterByName('id');
-
 document.addEventListener("DOMContentLoaded", function () {
-    /*  var contenedor = document.createElement('div');
-     contenedor.classList.add('carousel','flex','flex_ajustable');
-     contenedor.setAttribute("id", element.name + "_js");
-     contenedor.setAttribute("value", element.id);
-     contenidocuerpo.append(contenedor); */
-
-    /*  var contenidocuerpo =  document.getElementById("cuerpo_js"); */
+    ObtenerPelicula(getParameterByName('id'))
 }
 )
 
@@ -28,4 +23,23 @@ function getParameterByName(name) {
 
 function goBack() {
     window.history.back()
+}
+
+function ObtenerPelicula(id) {
+    fetch(url + "movie/"+ id +"?api_key="+key + "&language=es&page=1")
+              .then( resultado => {
+                if(resultado.status == 200) {
+                  return resultado.text();
+                } else {
+                  throw "Error en el servidor" 
+                }
+              })
+              .then( resultadotext => {
+                let pelicula = JSON.parse(resultadotext);
+                console.log(pelicula);      
+                //Cuerpo(pelicula,contenedor);
+              })
+              .catch( err => {
+                console.log(err);
+              });
 }
