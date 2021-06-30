@@ -99,10 +99,27 @@ async function RecargarCuerpo(){
        })
        .then( resultadotext => {
          let categorias = JSON.parse(resultadotext).results;
-            categorias.forEach(function (element)
+////
+     
+/////////
+           categorias.forEach(function (element)
             {
-               Cuerpo(element,contenedor);
-            })
+              fetch(url + "movie/"+ element.id +"?api_key="+key + "&language=es&page=1")
+              .then( resultado => {
+                if(resultado.status == 200) {
+                  return resultado.text();
+                } else {
+                  throw "Error en el servidor" 
+                }
+              })
+              .then( resultadotext => {
+                let pelicula = JSON.parse(resultadotext);
+                      Cuerpo(pelicula,contenedor);
+              })
+              .catch( err => {
+                console.log(err);
+              });
+           });
        })
        .catch( err => {
          console.log(err);
@@ -110,6 +127,7 @@ async function RecargarCuerpo(){
     }  
 
     function Cuerpo(item,div_contenedor){
+      console.log(item);
       var Listacategorias = "";
         var cuerpohtml =  document.getElementById(div_contenedor);
         var contenedor = document.createElement('div');
@@ -121,12 +139,12 @@ async function RecargarCuerpo(){
                     var etiq_img = document.createElement('img');
                     etiq_img.src = urlimg + item.poster_path;
                     etiq_img.alt = "Error al cargar";
-                var etiq_div_circle = document.createElement('a');
-                etiq_div_circle.classList.add('circle');
-                    var etiq_i = document.createElement('i');
-                    etiq_i.append(item.vote_average);
-                etiq_div_circle.append(etiq_i); 
             etiq_a.append(etiq_img); 
+            var etiq_div_circle = document.createElement('a');
+            etiq_div_circle.classList.add('circle');
+                var etiq_i = document.createElement('i');
+                etiq_i.append(item.vote_average);
+            etiq_div_circle.append(etiq_i); 
             var etiq_coontenedor_secun = document.createElement('div');
             etiq_coontenedor_secun.classList.add('contenedor_secundario_movie');
                 var etiq_div_title_movie = document.createElement('div');
@@ -137,18 +155,16 @@ async function RecargarCuerpo(){
                 var etiq_div_clasification_movie = document.createElement('div');
                 etiq_div_clasification_movie.classList.add("classification_movie");
                     var etiq_text_clasifi = document.createElement('label');
-                    item.genre_ids.forEach(function (element)
+                    item.genres.forEach(function (element)
                     {
-                      for (let i = 1; i < contenedores.length; i++) {
-                        selector.options[i].value == element ? Listacategorias += selector.options[i].text + " " :  "";
-                        }
+                        Listacategorias += element.name + " " ;
                     });
                     etiq_text_clasifi.textContent = Listacategorias;     
                 etiq_div_clasification_movie.append(etiq_text_clasifi);
                 var etiq_div_duration_movie = document.createElement('div');
                 etiq_div_duration_movie.classList.add("duration_movie");
                     var etiq_text_duration = document.createElement('label');
-                    etiq_text_duration.append("120");   
+                    etiq_text_duration.append(item.runtime + " min");   
                 etiq_div_duration_movie.append(etiq_text_duration);
                 var etiq_div_description_movie = document.createElement('div');
                 etiq_div_description_movie.classList.add("description_movie");
