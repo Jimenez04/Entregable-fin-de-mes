@@ -13,8 +13,8 @@ var key = '133e62f28b7a78182442c73f2c90e8b9';
 var urlimg = 'http://image.tmdb.org/t/p/w500';
 var pelis_popular = "movie/popular";
 // 
-document.addEventListener("DOMContentLoaded", function(){
-    ObtenerGenerosDePeliculas();
+document.addEventListener("DOMContentLoaded", async function(){
+    await ObtenerGenerosDePeliculas();
     RecargarCuerpo();
 }
  );
@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function(){
    window.addEventListener("orientationchange", function() {  RecargarCuerpo();}, false);
 
 async function RecargarCuerpo(){
+     
        removerhijos();
         if (screen.width > 450 || screen.availHeight < screen.availWidth) {
         ObtenerTodoConCategoria();
@@ -38,7 +39,7 @@ async function RecargarCuerpo(){
     }
 
    async function ObtenerTodoConCategoria(){
-        Array.from(selector.options).forEach(function(option_element) {
+        Array.from(document.querySelector("#select_Movies").options).forEach(function(option_element) {
             ObtenerPeliculasPorGenero(option_element.value, option_element.text+"_js");
             i++;
         });
