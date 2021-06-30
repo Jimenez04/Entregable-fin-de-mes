@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/Descrip_Peli.css">
+    <link rel="stylesheet" href="../img_parcial/fontawesome-free-5.15.3-web/css/all.css">
     <title>Document</title>
 </head>
-<body >
-    
-        <div class="body2" id="body2">
-            <div>
-                    <button class="btn_movie sin_borde fondo_transpa color_letras" id="section_movies" ><i class="fas fa-film"></i></button>
+
+<body>
+    <header>
+        <div class="container_header grid" id="header">
+            <div class="btn_volver grid sin_borde fondo_transpa justificar_izquierda">
+                <button type="button" href="#" onclick="goBack()" class="sin_borde fondo_transpa animacion"
+                    id="btn_barra_volver"><i class="fas fa-arrow-left"></i></button>
             </div>
-        </div>
-        <button class="btn_movie sin_borde fondo_transpa color_letras" id="back" >VOLVER</i></button>
-    
+    </header>
+
+    <div class="headerimage">
+        <img class="img_size object-cover" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/wr7nrzDrpGCEgYnw15jyAB59PtZ.jpg">
+    </div>
+
+
+    <script src=" ../js/jquery"></script>
     <script type="text/javascript" src="../js/Descrip_Peli.js"></script>
-    
+    <script type="text/javascript" src="../js/menu.js"></script>
+
 </body>
+
 </html>

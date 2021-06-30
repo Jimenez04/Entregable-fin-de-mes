@@ -5,6 +5,7 @@
 
 var body2 = document.getElementById("body2");
 var back = document.getElementById("back");
+
 // var url  = document.location.href = 'Descrip_Peli.html/id=section_movies';
 var prodId = getParameterByName('id');
 
@@ -33,4 +34,8 @@ function getParameterByName(name) {
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function goBack() {
+    window.history.back()
 }
