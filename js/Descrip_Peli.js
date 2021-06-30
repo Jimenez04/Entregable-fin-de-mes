@@ -3,6 +3,7 @@
  * @return String
  */
 
+ var cuerpohtml =  document.getElementById("cuerpo");
  var url = "https://api.themoviedb.org/3/";
  var key = '133e62f28b7a78182442c73f2c90e8b9';
  var urlimg = 'http://image.tmdb.org/t/p/w500';
@@ -51,5 +52,5 @@ function Cuerpo(item){
     imagen.classList.add('img_size' ,'object-cover');
     imagen.src = urlimg + item.backdrop_path;
     divimagen.append(imagen);
-    
+    cuerpohtml.append(divimagen);
 }
