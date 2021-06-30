@@ -13,7 +13,8 @@ var key = '133e62f28b7a78182442c73f2c90e8b9';
 var urlimg = 'http://image.tmdb.org/t/p/w500';
 var pelis_popular = "movie/popular";
 // 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", async function(){
+    await ObtenerGenerosDePeliculas();
     RecargarCuerpo();
 }
  );
@@ -24,16 +25,15 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 /////////////
 //Quitar este, quizas
-window.addEventListener('resize', function() { RecargarCuerpo();});
-window.addEventListener("orientationchange", function() {RecargarCuerpo();}, false);
+   window.addEventListener('resize', function() { RecargarCuerpo();});
+   window.addEventListener("orientationchange", function() {  RecargarCuerpo();}, false);
 
 async function RecargarCuerpo(){
+     
        removerhijos();
-       await ObtenerGenerosDePeliculas();
         if (screen.width > 450 || screen.availHeight < screen.availWidth) {
         ObtenerTodoConCategoria();
         }else if(screen.width < 450 ){
-        removerhijos();
         ObtenerPeliculasPorGenero(selector.options[selector.selectedIndex].value, selector.options[selector.selectedIndex].text+"_js");
         }
     }
@@ -110,6 +110,7 @@ async function RecargarCuerpo(){
     }  
 
     function Cuerpo(item,div_contenedor){
+      var Listacategorias = "";
         var cuerpohtml =  document.getElementById(div_contenedor);
         var contenedor = document.createElement('div');
         contenedor.setAttribute("onclick","window.location='Descrip_Peli.html?id="+item.id +"';");
@@ -136,7 +137,13 @@ async function RecargarCuerpo(){
                 var etiq_div_clasification_movie = document.createElement('div');
                 etiq_div_clasification_movie.classList.add("classification_movie");
                     var etiq_text_clasifi = document.createElement('label');
-                    etiq_text_clasifi.textContent = "Acción, Comedia, Drama";        
+                    item.genre_ids.forEach(function (element)
+                    {
+                      for (let i = 1; i < contenedores.length; i++) {
+                        selector.options[i].value == element ? Listacategorias += selector.options[i].text + " " :  "";
+                        }
+                    });
+                    etiq_text_clasifi.textContent = Listacategorias;     
                 etiq_div_clasification_movie.append(etiq_text_clasifi);
                 var etiq_div_duration_movie = document.createElement('div');
                 etiq_div_duration_movie.classList.add("duration_movie");
@@ -154,7 +161,7 @@ async function RecargarCuerpo(){
         cuerpohtml.append(contenedor);
     }
 
-    function removerhijos() {
+    async function removerhijos() {
         i = 0;
         while(i<contenedores.length){
             var cuerpohtml =  document.getElementById(contenedores[i]);
@@ -163,7 +170,7 @@ async function RecargarCuerpo(){
                     cuerpohtml.removeChild(cuerpohtml.firstChild);
                 }
             } catch (error) {
-                
+                console.log(error);
             }
             i++;
         }
