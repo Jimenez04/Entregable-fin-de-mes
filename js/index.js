@@ -110,6 +110,8 @@ async function RecargarCuerpo(){
     }  
 
     function Cuerpo(item,div_contenedor){
+      console.log(item)
+      var Listacategorias = "";
         var cuerpohtml =  document.getElementById(div_contenedor);
         var contenedor = document.createElement('div');
         contenedor.setAttribute("onclick","window.location='Descrip_Peli.html?id="+item.id +"';");
@@ -136,7 +138,14 @@ async function RecargarCuerpo(){
                 var etiq_div_clasification_movie = document.createElement('div');
                 etiq_div_clasification_movie.classList.add("classification_movie");
                     var etiq_text_clasifi = document.createElement('label');
-                    etiq_text_clasifi.textContent = "Acción, Comedia, Drama";        
+                    item.genre_ids.forEach(function (element)
+                    {
+                      for (let i = 1; i < contenedores.length; i++) {
+                        selector.options[i].value == element ? Listacategorias += selector.options[i].text + " " :  "";
+                        }
+                    });
+                    etiq_text_clasifi.textContent = Listacategorias;     
+
                 etiq_div_clasification_movie.append(etiq_text_clasifi);
                 var etiq_div_duration_movie = document.createElement('div');
                 etiq_div_duration_movie.classList.add("duration_movie");
