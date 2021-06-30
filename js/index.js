@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 /////////////
 //Quitar este, quizas
-   window.addEventListener('resize', function() { removerhijos(); RecargarCuerpo();});
-// window.addEventListener("orientationchange", function() { removerhijos(); RecargarCuerpo();}, false);
+   window.addEventListener('resize', function() { RecargarCuerpo();});
+   window.addEventListener("orientationchange", function() {  RecargarCuerpo();}, false);
 
 async function RecargarCuerpo(){
        removerhijos();
@@ -162,14 +162,14 @@ async function RecargarCuerpo(){
 
     async function removerhijos() {
         i = 0;
-        while(i<=contenedores.length){
+        while(i<contenedores.length){
             var cuerpohtml =  document.getElementById(contenedores[i]);
             try {
                 while (cuerpohtml.firstChild) {
                     cuerpohtml.removeChild(cuerpohtml.firstChild);
                 }
             } catch (error) {
-                
+                console.log(error);
             }
             i++;
         }
