@@ -14,6 +14,7 @@ var urlimg = 'http://image.tmdb.org/t/p/w500';
 var pelis_popular = "movie/popular";
 // 
 document.addEventListener("DOMContentLoaded", function(){
+    ObtenerGenerosDePeliculas();
     RecargarCuerpo();
 }
  );
@@ -24,22 +25,20 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 /////////////
 //Quitar este, quizas
-window.addEventListener('resize', function() { RecargarCuerpo();});
-window.addEventListener("orientationchange", function() {RecargarCuerpo();}, false);
+   window.addEventListener('resize', function() { removerhijos(); RecargarCuerpo();});
+// window.addEventListener("orientationchange", function() { removerhijos(); RecargarCuerpo();}, false);
 
 async function RecargarCuerpo(){
        removerhijos();
-       await ObtenerGenerosDePeliculas();
         if (screen.width > 450 || screen.availHeight < screen.availWidth) {
         ObtenerTodoConCategoria();
         }else if(screen.width < 450 ){
-        removerhijos();
         ObtenerPeliculasPorGenero(selector.options[selector.selectedIndex].value, selector.options[selector.selectedIndex].text+"_js");
         }
     }
 
    async function ObtenerTodoConCategoria(){
-        Array.from(document.querySelector("#select_Movies").options).forEach(function(option_element) {
+        Array.from(selector.options).forEach(function(option_element) {
             ObtenerPeliculasPorGenero(option_element.value, option_element.text+"_js");
             i++;
         });
@@ -110,7 +109,6 @@ async function RecargarCuerpo(){
     }  
 
     function Cuerpo(item,div_contenedor){
-      console.log(item)
       var Listacategorias = "";
         var cuerpohtml =  document.getElementById(div_contenedor);
         var contenedor = document.createElement('div');
@@ -145,7 +143,6 @@ async function RecargarCuerpo(){
                         }
                     });
                     etiq_text_clasifi.textContent = Listacategorias;     
-
                 etiq_div_clasification_movie.append(etiq_text_clasifi);
                 var etiq_div_duration_movie = document.createElement('div');
                 etiq_div_duration_movie.classList.add("duration_movie");
@@ -163,9 +160,9 @@ async function RecargarCuerpo(){
         cuerpohtml.append(contenedor);
     }
 
-    function removerhijos() {
+    async function removerhijos() {
         i = 0;
-        while(i<contenedores.length){
+        while(i<=contenedores.length){
             var cuerpohtml =  document.getElementById(contenedores[i]);
             try {
                 while (cuerpohtml.firstChild) {
