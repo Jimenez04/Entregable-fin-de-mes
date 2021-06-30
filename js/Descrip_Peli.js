@@ -36,10 +36,20 @@ function ObtenerPelicula(id) {
               })
               .then( resultadotext => {
                 let pelicula = JSON.parse(resultadotext);
-                console.log(pelicula);      
-                //Cuerpo(pelicula,contenedor);
+                Cuerpo(pelicula);
               })
               .catch( err => {
                 console.log(err);
               });
+}
+
+function Cuerpo(item){
+    console.log(item);   
+    var divimagen =  document.createElement('div');
+    divimagen.classList.add('headerimage');
+    var imagen =  document.createElement('img');
+    imagen.classList.add('img_size' ,'object-cover');
+    imagen.src = urlimg + item.backdrop_path;
+    divimagen.append(imagen);
+    
 }
