@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+  background: white;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 .btn_volver{
     z-index: 1;
     color: #a7a6a9;
@@ -5,7 +12,7 @@
 
 .headerimage {
     background-image:linear-gradient(to left top,#31ffd260,#f4fffb11);
-    height:25rem;
+    height:16rem;
     width: auto;
     margin-top: -85px;
     position: relative;
@@ -16,7 +23,7 @@
   .headerimage img{
     width: 100%;
     height: 100%;
-	opacity: .6; 
+	  opacity: 80%; 
 }
   #backshape {
     display:block;
@@ -32,7 +39,127 @@
 
 .object-cover{
     object-fit: cover;
+    object-position: center;
+}  
+
+.cover {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  z-index: 2;
 }
+.cover:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.portada{
+
+}
+.portada img{
+  max-width: 520px;
+  max-height: 220px;
+  column-count: 2;
+}
+.flex{
+  margin-right: 2rem;
+  justify-content: flex-end;
+  display: flex;
+  background: #eee;
+}
+.play {
+  z-index: 1;
+  position: absolute;
+  margin-top: 9.2rem;
+  
+}
+.details{
+  position: absolute;
+  margin: 11.5rem 0rem 2rem 2rem;
+}
+.title1{
+  display: flex;
+  white-space: nowrap;
+  margin-top: 5rem;
+  font-size: 23px;
+  font-weight: 600;
+}
+.title1 label{
+  margin-left: 1rem;
+  float: none;
+  width: auto;
+  height: auto;
+  font-size: 0.9rem;
+  color: white;
+}
+.classification_movie{
+  margin-top: 0.5rem;
+}
+
+.calification {
+  margin-top: 0.7rem;
+}
+.calification label{
+  margin-left: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: orange;
+}
+.calification label span{
+  margin-left: 0rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #cfcfd1;
+}
+.fa-star{
+  font-size: 1.5rem;
+  color: orange;
+}
+.description{
+  margin-right: 2rem;
+  float: left;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #cfcfd1;
+}
+.description span{
+  color: #3cbcac;
+  text-decoration: underline;
+}
+.gallery{
+  flex: none;
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.gallery img{
+  max-width:100%;
+  width: 150px;
+  height: 200px;
+}
+.flex-content{
+  margin-left: -2rem;
+  display: flex;
+  align-items:center;
+  background-color: rgb(255, 255, 255);
+  padding-left: 1rem;
+  overflow-x: scroll;
+}
+
+/*Colores y valores de los iconos FontAwesome */
+
+.fa-play-circle {
+  color: #3cbcac;
+  background: white;
+  border-radius: 50%;
+  line-height: 1em;
+  width: 1em;
+}
+.icon-a{
+  position: absolute;
+}
+
+
 
 @media screen and (min-width:825px){
     .btn_volver{
@@ -46,14 +173,23 @@
     }
     #backshape .wrapper {
         display: none;
-    }   
+    } 
+    .play{
+      display: none;
+    }  
 }
 @media only screen and (min-width: 825px) and (orientation: landscape){
   
 }
 @media screen and (min-width:450px) and (max-width:824px){  
   .headerimage{
-    margin-top: -135px;
+    margin-top: -100px;
+    transform:skew(0deg,4deg);
+    -ms-transform:skew(0deg,4deg); /* IE 9 */
+    -webkit-transform:skew(0deg,4deg); /* Safari and Chrome */
+  }
+  .play{
+    margin-top: 8rem;
   }
 }
 @media screen and (min-width:800px) and (max-height:1400px) and (max-width:1030px) and (min-height:1000px){

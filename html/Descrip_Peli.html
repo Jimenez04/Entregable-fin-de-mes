@@ -15,17 +15,87 @@
 <body>
     <header>
         <div class="container_header grid" id="header">
-            <div class="btn_volver grid sin_borde fondo_transpa justificar_izquierda">
+            <div class="btn_volver grid justificar_izquierda">
                 <button type="button" href="#" onclick="goBack()" class="sin_borde fondo_transpa animacion"
                     id="btn_barra_volver"><i class="fas fa-arrow-left"></i></button>
             </div>
     </header>
-    
-    <div id="cuerpo">
-       
+
+    <!--Se requiere pasar todo a dinámico-->
+
+    <!--Carátula de la película-->
+    <div>
+        <a class="portada" href="#/">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jTswp6KyDYKtvC52GbHagrZbGvD.jpg" alt="cover"
+                class="cover"></img>
+        </a>
     </div>
 
+    <!--Botón de Play - Tal vez se pueda pasar junto a la Carátula en un Container si da problemas 
+        tenerlos por separados.- -->
+    <div class="flex">
+        <a class="play" href="#/">
+            <button type="button" href="#" class="sin_borde fondo_transpa animacion" id="btn_play"><i
+                    class="fas fa-play-circle fa-5x"></i></button>
+        </a>
+    </div>
 
+    <!--Detalles Titulo, duración, entre otros.-->
+    <div>
+        <article class="details">
+            <!--Si da problemas el titulo se puede meter en un Label-->
+            <div class="title1">Luca (2021)
+                <div class="duration_movie">
+                    <label>105 min</label>
+                </div>
+            </div>
+            <div class="classification_movie">
+                <label>Animación Comedia Familia Fantasía</label>
+            </div>
+            <div class="calification">
+
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+
+                <label>8.2<span>/10</span>
+                </label>
+
+            </div>
+
+            <div class="description">
+                <p>Ambientada en un precioso pueblo costero de la Riviera italiana, narra la historia sobre el paso a la
+                    edad adulta de un chico que vive un verano inolvidable lleno de helados, pasta e infinitos paseos en
+                    scooter. Luca comparte <span>Detalles</span>.</p> <!--Falta configurar este span para delimitar los caracteres y que se muestre-->
+            </div>
+
+            <div class="flex-content">
+                <a class="gallery" href="#/">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/dFLGlsOc1MeTyOOoe7YbbdntwPZ.jpg"
+                        alt="cover" class=""></img>
+                </a>
+                <a class="gallery" href="#/">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/dFLGlsOc1MeTyOOoe7YbbdntwPZ.jpg"
+                        alt="cover" class=""></img>
+                </a>
+                <a class="gallery" href="#/">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/dFLGlsOc1MeTyOOoe7YbbdntwPZ.jpg"
+                        alt="cover" class=""></img>
+                </a>
+                <a class="gallery" href="#/">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/dFLGlsOc1MeTyOOoe7YbbdntwPZ.jpg"
+                        alt="cover" class=""></img>
+                </a>
+            </div>
+
+        </article>
+    </div>
+
+    <div id="cuerpo">
+
+    </div>
     <script src=" ../js/jquery"></script>
     <script type="text/javascript" src="../js/Descrip_Peli.js"></script>
     <script type="text/javascript" src="../js/menu.js"></script>

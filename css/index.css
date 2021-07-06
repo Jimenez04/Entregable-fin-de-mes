@@ -2,8 +2,6 @@ html, body {
     height: 100%;
     font-size: calc(.8.5em + .5vw);
     background-image: linear-gradient(to left top, #000000, #100a0a, #1a1310, #211a13, #252116, #242518, #21291b, #1c2d21, #132d27, #092d2d, #042d34, #082b39);
-    overflow-y: hidden;
-    overflow-x: hidden;
     font-family: 'Source Sans Pro', Arial, sans-serif;
 }
 .container_header{
