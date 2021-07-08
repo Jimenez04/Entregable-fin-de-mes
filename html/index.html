@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/buscar.css">
     <link rel="stylesheet" href="../img_parcial/fontawesome-free-5.15.3-web/css/all.css">
     <title>B84135</title>
 </head>
@@ -30,8 +31,11 @@
                     <option value="0" >Popular</option>
                 </select>
             </div>
-            <div class="btn_buscar justificar_derecha grid">
-                <button class="sin_borde fondo_transpa animacion"><i class="fas fa-search"></i></button>
+            <div class="sin_borde justificar_derecha grid efectobuscar input-group ui-widget ">
+                <!-- <button class="sin_borde fondo_transpa animacion"><i class="fas fa-search"></i></button> -->
+                    <!-- <form class="form-search"> -->
+                        <input class="sin_borde form-control form-text" id="tags" maxlength="128" placeholder="Buscar" size="15" type="text" />
+                    <!-- </form> -->
             </div>
         </div>
     </header>
@@ -57,7 +61,9 @@
                 </div>
     </footer>
     <script src="../js/jquery"></script>
+    <script type="text/javascript" src="../js/autocompletadoui.js"></script>
     <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript" src="../js/buscar.js"></script>
     <script type="text/javascript" src="../js/menu.js"></script>
 </body>
 </html>

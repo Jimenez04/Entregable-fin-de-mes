@@ -87,7 +87,7 @@ async function RecargarCuerpo(){
         if(id_categoria!=0){
             enlace = url + full_pelis +"?api_key="+key + "&with_genres="+ id_categoria;
         }else {
-            enlace = url + pelis_popular +"?api_key="+key + "&language=es&page=1";
+            enlace = url + pelis_popular +"?api_key="+key + "&language=es";
         }
        await fetch(enlace)
        .then( resultado => {
@@ -99,12 +99,9 @@ async function RecargarCuerpo(){
        })
        .then( resultadotext => {
          let categorias = JSON.parse(resultadotext).results;
-////
-     
-/////////
            categorias.forEach(function (element)
             {
-              fetch(url + "movie/"+ element.id +"?api_key="+key + "&language=es&page=1")
+              fetch(url + "movie/"+ element.id +"?api_key="+key + "&language=es")
               .then( resultado => {
                 if(resultado.status == 200) {
                   return resultado.text();
@@ -127,7 +124,6 @@ async function RecargarCuerpo(){
     }  
 
     function Cuerpo(item,div_contenedor){
-      console.log(item);
       var Listacategorias = "";
         var cuerpohtml =  document.getElementById(div_contenedor);
         var contenedor = document.createElement('div');

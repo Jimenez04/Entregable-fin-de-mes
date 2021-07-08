@@ -1,0 +1,36 @@
+.efectobuscar{
+    /* position:relative;
+    height:80px;
+    width:500px; */
+} 
+.efectobuscar input[type=text]{
+	background-image: url("../img/search-solid.svg");
+    /* background: url('../img/search-solid.svg') no-repeat, #a7a6a9 ; */
+	background-size: 25px;
+	background-position: 2px 3px;
+	background-repeat: no-repeat;
+	text-indent:30px;
+    background-color: transparent;
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    font-family: inherit;
+    font-size: 100%;
+    padding:5px 5px;
+    width: 15px;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+}
+
+.efectobuscar  input[type=text]:focus {
+    width: 150px;
+    background-color: #fff;
+}
+
+/* .efectobuscar  button.btn {
+    padding:16px 12px;
+    border-top-right-radius:4px;
+    border-bottom-right-radius: 4px;
+    cursor:not-allowed;
+} */
+
