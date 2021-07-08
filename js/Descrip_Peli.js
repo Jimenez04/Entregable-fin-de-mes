@@ -41,7 +41,6 @@ function goBack() {
               })
               .then( resultadotext => {
                 let pelicula = JSON.parse(resultadotext);
-                //
                      fetch(url + "movie/"+ id +"/images?api_key="+key+"&language=es" )
                     .then( resultado => {
                       if(resultado.status == 200) {
@@ -52,38 +51,49 @@ function goBack() {
                     })
                     .then( resultadotext => {
                       let posterpeliculajson = JSON.parse(resultadotext).posters;
-                      Cuerpo(pelicula, posterpeliculajson );
+                        fetch(url + "movie/"+ id +"/credits?api_key="+key +"&language=es" )
+                            .then( resultado => {
+                              if(resultado.status == 200) {
+                                return resultado.text();
+                              } else {
+                                throw "Error en el servidor" 
+                              }
+                            })
+                            .then( resultadotext => {
+                              let reparto = JSON.parse(resultadotext).cast;
+                              Cuerpo(pelicula, posterpeliculajson,reparto );
+                            })
+                            .catch( err => {
+                              console.log(err);
+                            });
                     })
                     .catch( err => {
                       console.log(err);
                     });
-                //
-                
               })
               .catch( err => {
                 console.log(err);
               });
 }
-// async function ObtenerPosterPelicula(id) {
-//   await fetch(url + "movie/"+ id +"/images?api_key="+key )
-//             .then( resultado => {
-//               if(resultado.status == 200) {
-//                 return resultado.text();
-//               } else {
-//                 throw "Error en el servidor" 
-//               }
-//             })
-//             .then( resultadotext => {
-//               let posterpeliculajson = JSON.parse(resultadotext).posters;
-//               console.log(posterpeliculajson);
-//               return posterpeliculajson;
-//             })
-//             .catch( err => {
-//               console.log(err);
-//             });
-// }
+  function ObtenerepartoPelicula(id) {
+    fetch(url + "movie/"+ id +"/credits?api_key="+key +"&language=es" )
+             .then( resultado => {
+               if(resultado.status == 200) {
+                 return resultado.text();
+               } else {
+                 throw "Error en el servidor" 
+               }
+             })
+             .then( resultadotext => {
+               let reparto = JSON.parse(resultadotext).cast;
+               return reparto;
+            })
+             .catch( err => {
+               console.log(err);
+             });
+ }
 
-function Cuerpo(item, gallery_list){
+function Cuerpo(item, gallery_list, reparto){
     console.log(item);  
     console.log(gallery_list); 
     var Listacategorias = "";
@@ -154,18 +164,30 @@ function Cuerpo(item, gallery_list){
             var item_path = document.createElement('a');
             item_path.classList.add("gallery");
               var ima_path =  document.createElement('img');
-              console.log(urlimg + element.file_path);
               ima_path.src = urlimg + element.file_path; 
               ima_path.alt = "cover";
             item_path.append(ima_path);
             gallery_path.append(item_path);
           });
     section_article.append(label_fotos,gallery_path);
-infohtml.append(section_article);
 
       var label_creditos = document.createElement('label');
       label_creditos.textContent = "Reparto";
-section_article.append(label_creditos);
+      var gallery_reparto = document.createElement('div');
+      gallery_reparto.classList.add("flex-content");
+                reparto.forEach(function (element){
+                  var item_path = document.createElement('a');
+                  item_path.classList.add("gallery");
+                    var ima_path =  document.createElement('img');
+                    console.log(urlimg + element.profile_path);
+                    ima_path.src = urlimg + element.profile_path; 
+                    ima_path.alt = "cover";
+                  item_path.append(ima_path);
+                  gallery_reparto.append(item_path);
+                });
+    section_article.append(label_creditos,gallery_reparto);
+
+infohtml.append(section_article);
 
       var divimagen =  document.createElement('div');
       divimagen.classList.add('headerimage');
@@ -174,6 +196,5 @@ section_article.append(label_creditos);
         imagen.src = urlimg + item.backdrop_path;
       divimagen.append(imagen);
 portada_principalhtml.append(divimagen);
-
 }
  
