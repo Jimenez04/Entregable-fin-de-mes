@@ -42,7 +42,7 @@ function goBack() {
               .then( resultadotext => {
                 let pelicula = JSON.parse(resultadotext);
                 //
-                     fetch(url + "movie/"+ id +"/images?api_key="+key )
+                     fetch(url + "movie/"+ id +"/images?api_key="+key+"&language=es" )
                     .then( resultado => {
                       if(resultado.status == 200) {
                         return resultado.text();
