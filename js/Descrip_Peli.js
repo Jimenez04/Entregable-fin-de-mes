@@ -146,6 +146,8 @@ function Cuerpo(item, gallery_list){
       etiq_div_description_movie.append(etiq_text_descrip);
     section_article.append(etiq_div_description_movie);
 
+     var label_fotos = document.createElement('label');
+     label_fotos.textContent = "Imagenes";
       var gallery_path = document.createElement('div');
       gallery_path.classList.add("flex-content");
           gallery_list.forEach(function (element){
@@ -158,8 +160,12 @@ function Cuerpo(item, gallery_list){
             item_path.append(ima_path);
             gallery_path.append(item_path);
           });
-    section_article.append(gallery_path);
+    section_article.append(label_fotos,gallery_path);
 infohtml.append(section_article);
+
+      var label_creditos = document.createElement('label');
+      label_creditos.textContent = "Reparto";
+section_article.append(label_creditos);
 
       var divimagen =  document.createElement('div');
       divimagen.classList.add('headerimage');
