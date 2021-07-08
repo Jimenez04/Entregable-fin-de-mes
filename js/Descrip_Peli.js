@@ -142,7 +142,7 @@ function Cuerpo(item, gallery_list){
       var etiq_div_description_movie = document.createElement('div');
       etiq_div_description_movie.classList.add("description");
           var etiq_text_descrip = document.createElement('p');
-          etiq_text_descrip.textContent = item.overview;// + `<span>Detalles</span>`;
+          etiq_text_descrip.textContent = item.overview;
       etiq_div_description_movie.append(etiq_text_descrip);
     section_article.append(etiq_div_description_movie);
 
@@ -152,8 +152,10 @@ function Cuerpo(item, gallery_list){
             var item_path = document.createElement('a');
             item_path.classList.add("gallery");
               var ima_path =  document.createElement('img');
-              ima_path.src = urlimg + element.file_path;  //No se, cambiar
-            item_path.append(imagen);
+              console.log(urlimg + element.file_path);
+              ima_path.src = urlimg + element.file_path; 
+              ima_path.alt = "cover";
+            item_path.append(ima_path);
             gallery_path.append(item_path);
           });
     section_article.append(gallery_path);
