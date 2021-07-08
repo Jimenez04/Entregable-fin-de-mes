@@ -146,6 +146,9 @@ function Cuerpo(item, gallery_list, reparto){
       star_div_clasification_movie.append(star_item,star_item1,star_item2,star_item3,star_item4);
          var label_calificacion = document.createElement('label');
          label_calificacion.textContent = item.vote_average;
+          var span_calificacion = document.createElement('span');
+          span_calificacion.textContent = "/10";
+        label_calificacion.append(span_calificacion);
       star_div_clasification_movie.append(label_calificacion);
     section_article.append(star_div_clasification_movie);
 
@@ -153,6 +156,9 @@ function Cuerpo(item, gallery_list, reparto){
       etiq_div_description_movie.classList.add("description");
           var etiq_text_descrip = document.createElement('p');
           etiq_text_descrip.textContent = item.overview;
+            var span_descrip = document.createElement('span');
+            span_descrip.textContent = " Detalles";
+          etiq_text_descrip.append(span_descrip);
       etiq_div_description_movie.append(etiq_text_descrip);
     section_article.append(etiq_div_description_movie);
 
