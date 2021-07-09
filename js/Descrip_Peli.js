@@ -154,14 +154,24 @@ function Cuerpo(item, gallery_list, reparto){
       etiq_div_description_movie.classList.add("description");
           var etiq_text_descrip = document.createElement('p');
           etiq_text_descrip.textContent = item.overview;
-            var span_descrip = document.createElement('span');
-            span_descrip.textContent = " Detalles";
-          etiq_text_descrip.append(span_descrip);
       etiq_div_description_movie.append(etiq_text_descrip);
     section_article.append(etiq_div_description_movie);
 
+    var div_span = document.createElement('div');
+    var span_descrip = document.createElement('span');
+    span_descrip.classList.add("detalles");
+            span_descrip.setAttribute('id','detalles_show');
+            span_descrip.textContent = "Detalles";
+    div_span.append(span_descrip);
+    section_article.append(div_span);
+
+     var div_Imagenes = document.createElement('div');
+     div_Imagenes.classList.add("titulo_Fotos");
      var label_fotos = document.createElement('label');
      label_fotos.textContent = "Imagenes";
+     div_Imagenes.append(label_fotos);
+     section_article.append(div_Imagenes);
+
       var gallery_path = document.createElement('div');
       gallery_path.classList.add("flex-content");
           gallery_list.forEach(function (element){
@@ -177,10 +187,15 @@ function Cuerpo(item, gallery_list, reparto){
               
             }
           });
-    section_article.append(label_fotos,gallery_path);
+    section_article.append(gallery_path);
 
-      var label_creditos = document.createElement('label');
-      label_creditos.textContent = "Reparto";
+     var div_Reparto = document.createElement('div');
+     div_Reparto.classList.add("titulo_Fotos");
+     var label_fotos = document.createElement('label');
+     label_fotos.textContent = "Reparto";
+     div_Reparto.append(label_fotos);
+     section_article.append(div_Reparto);
+
       var gallery_reparto = document.createElement('div');
       gallery_reparto.classList.add("flex-content");
                 reparto.forEach(function (element){
@@ -190,16 +205,18 @@ function Cuerpo(item, gallery_list, reparto){
                     var ima_path =  document.createElement('img');
                     ima_path.src = urlimg + element.profile_path; 
                     ima_path.alt = "cover";
-                    item_path.append(ima_path);
                     var label_nombre_creditos = document.createElement('label');
                     label_nombre_creditos.textContent = element.original_name;
-                    gallery_reparto.append(item_path, label_nombre_creditos);
+                    item_path.append(ima_path, label_nombre_creditos);
+                    
+
+                    gallery_reparto.append(item_path);
                   } catch (error) {
                     
                   }
                   
                 });
-    section_article.append(label_creditos,gallery_reparto);
+    section_article.append(gallery_reparto);
 
 infohtml.append(section_article);
 
@@ -211,4 +228,16 @@ infohtml.append(section_article);
       divimagen.append(imagen);
 portada_principalhtml.append(divimagen);
 }
+
+$(document).on('click', '#detalles_show', function(e) {
+  e.stopPropagation();
+  $('.description').css({
+      'height': 'auto'
+  })
+});
+$(document).click(function() {
+  $('.description').css({
+      'height': '70px'
+  })
+})
  
