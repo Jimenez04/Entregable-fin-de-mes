@@ -34,3 +34,85 @@
     cursor:not-allowed;
 } */
 
+.ui-corner-all
+{
+    -moz-border-radius: 4px 4px 4px 4px;
+}
+.ui-widget-content
+{
+    border: 2px solid #3ed2bf;
+    border-radius: 15px;
+    color: white;
+    background-color: rgba(0, 0, 0, .8) !important;
+    background-size: cover;
+}
+.ui-widget
+{
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 15px;
+}
+.ui-menu
+{
+    display: block;
+    float: left;
+    list-style: none outside none;
+    margin: 0;
+    padding: 5px;
+    left: 14.4% !important;
+
+}
+.ui-autocomplete
+{
+    cursor: default;
+    position: absolute;
+}
+.ui-menu .ui-menu-item
+{
+    clear: left;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.ui-menu .ui-menu-item a
+{
+    display: block;
+    padding: 3px 3px 3px 3px;
+    text-decoration: line-through;
+    cursor: pointer;
+    background-color: Green;
+}
+.ui-menu .ui-menu-item :hover
+{
+    display: block;
+    padding: 3px 3px 3px 3px;
+    text-decoration: line-through;
+    color: #3ed2bf;
+    cursor: pointer;
+    background-color: ButtonText;
+}
+.ui-widget-content a
+{
+    color: #3ed2bf;
+}
+
+.ui-helper-hidden-accessible{
+display: none;
+}
+
+
+@media screen and (min-width:450px){
+    .ui-menu
+        {
+            display: block;
+            float: left;
+            list-style: none outside none;
+            margin: 0;
+            padding: 5px;
+            left: 80% !important;
+
+        }
+        .efectobuscar  input[type=text]:focus {
+            width: 300px;
+            background-color: #fff;
+        }
+}

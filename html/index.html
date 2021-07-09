@@ -19,7 +19,7 @@
             <div class="menu_dinamico overlay fondo_transpa" id="menu_dinamico">
                 <nav class="">
                     <ul id="lista">
-                        <li><a href="#" class="btn_inicio color_letras animacion ">Inicio</a></li>
+                        <li><a href="index.html" class="btn_inicio color_letras animacion ">Inicio</a></li>
                         <li><a href="#" class="btn_contact color_letras animacion">Contacto</a></li>
                         <li><a href="#" class="btn_about color_letras animacion">Nosotros</a></li>
                         <li><a href="#" class="btn_help color_letras animacion">Ayuda</a></li>
@@ -33,9 +33,9 @@
             </div>
             <div class="sin_borde justificar_derecha grid efectobuscar input-group ui-widget ">
                 <!-- <button class="sin_borde fondo_transpa animacion"><i class="fas fa-search"></i></button> -->
-                    <!-- <form class="form-search"> -->
-                        <input class="sin_borde form-control form-text" id="tags" maxlength="128" placeholder="Buscar" size="15" type="text" />
-                    <!-- </form> -->
+                    <form class="form-search" action="javascript:busquedapornombre()"> 
+                        <input class="sin_borde form-control form-text" id="text_busqueda" maxlength="128" placeholder="Buscar" size="15" type="text" />
+                    </form> 
             </div>
         </div>
     </header>
@@ -46,8 +46,8 @@
     </div>
     <footer id="footer" class="grid">
                 <div>
-                    <form method="GET" action="Descrip_Peli.html">
-                        <button type="hidden" class="btn_movie sin_borde fondo_transpa color_letras" name="id" id="1"  value="1"><i  class="fas fa-film"></i></button>
+                    <form method="GET" action="index.html">
+                        <button type="hidden" class="btn_movie sin_borde fondo_transpa color_letras"><i  class="fas fa-film"></i></button>
                     </form>
                 </div>
                 <div>
