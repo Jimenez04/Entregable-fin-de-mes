@@ -191,7 +191,9 @@ function Cuerpo(item, gallery_list, reparto){
                     ima_path.src = urlimg + element.profile_path; 
                     ima_path.alt = "cover";
                     item_path.append(ima_path);
-                    gallery_reparto.append(item_path);
+                    var label_nombre_creditos = document.createElement('label');
+                    label_nombre_creditos.textContent = element.original_name;
+                    gallery_reparto.append(item_path, label_nombre_creditos);
                   } catch (error) {
                     
                   }

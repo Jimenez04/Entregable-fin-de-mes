@@ -6,10 +6,11 @@ body{
   max-width: 100%;
 }
 
+
 .btn_volver{
     z-index: 1;
     color: #a7a6a9;
-}
+  }
 
 .headerimage {
     background-image:linear-gradient(to left top,#31ffd260,#f4fffb11);
