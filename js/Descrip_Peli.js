@@ -153,8 +153,13 @@ function Cuerpo(item, gallery_list, reparto){
       var etiq_div_description_movie = document.createElement('div');
       etiq_div_description_movie.classList.add("description");
           var etiq_text_descrip = document.createElement('p');
+          var span_descrip = document.createElement('span');
+          span_descrip.classList.add("detalles");
+            span_descrip.setAttribute('id','detalles_hide');
+            span_descrip.textContent = "Ver menos";
           etiq_text_descrip.textContent = item.overview;
-      etiq_div_description_movie.append(etiq_text_descrip);
+
+      etiq_div_description_movie.append(etiq_text_descrip, span_descrip);
     section_article.append(etiq_div_description_movie);
 
     var div_span = document.createElement('div');
@@ -230,12 +235,19 @@ portada_principalhtml.append(divimagen);
 }
 
 $(document).on('click', '#detalles_show', function(e) {
-  e.stopPropagation();
+  $('#detalles_show').css({
+    'display': 'none'
+  })
   $('.description').css({
       'height': 'auto'
   })
+  e.stopPropagation(); 
 });
-$(document).click(function() {
+
+$(document).on('click', '#detalles_hide', function(e) {
+  $('#detalles_show').css({
+    'display': 'contents'
+  })
   $('.description').css({
       'height': '70px'
   })
