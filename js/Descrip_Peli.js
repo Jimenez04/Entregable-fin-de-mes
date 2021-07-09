@@ -94,8 +94,6 @@ function goBack() {
  }
 
 function Cuerpo(item, gallery_list, reparto){
-    console.log(item);  
-    console.log(gallery_list); 
     var Listacategorias = "";
     
     var a_imagen =  document.createElement('a');
@@ -167,13 +165,17 @@ function Cuerpo(item, gallery_list, reparto){
       var gallery_path = document.createElement('div');
       gallery_path.classList.add("flex-content");
           gallery_list.forEach(function (element){
-            var item_path = document.createElement('a');
-            item_path.classList.add("gallery");
-              var ima_path =  document.createElement('img');
-              ima_path.src = urlimg + element.file_path; 
-              ima_path.alt = "cover";
-            item_path.append(ima_path);
-            gallery_path.append(item_path);
+            try {
+              var item_path = document.createElement('a');
+              item_path.classList.add("gallery");
+                var ima_path =  document.createElement('img');
+                ima_path.src = urlimg + element.file_path; 
+                ima_path.alt = "cover";
+              item_path.append(ima_path);
+              gallery_path.append(item_path);
+            } catch (error) {
+              
+            }
           });
     section_article.append(label_fotos,gallery_path);
 
@@ -182,14 +184,18 @@ function Cuerpo(item, gallery_list, reparto){
       var gallery_reparto = document.createElement('div');
       gallery_reparto.classList.add("flex-content");
                 reparto.forEach(function (element){
-                  var item_path = document.createElement('a');
-                  item_path.classList.add("gallery");
+                  try {
+                    var item_path = document.createElement('a');
+                    item_path.classList.add("gallery");
                     var ima_path =  document.createElement('img');
-                    console.log(urlimg + element.profile_path);
                     ima_path.src = urlimg + element.profile_path; 
                     ima_path.alt = "cover";
-                  item_path.append(ima_path);
-                  gallery_reparto.append(item_path);
+                    item_path.append(ima_path);
+                    gallery_reparto.append(item_path);
+                  } catch (error) {
+                    
+                  }
+                  
                 });
     section_article.append(label_creditos,gallery_reparto);
 

@@ -3,6 +3,7 @@
 body{
   background: white;
   font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  max-width: 100%;
 }
 
 .btn_volver{
@@ -76,6 +77,7 @@ body{
 .details{
   position: absolute;
   margin: 11.5rem 0rem 2rem 2rem;
+  width: calc(100% - 2rem)
 }
 .title1{
   display: flex;
