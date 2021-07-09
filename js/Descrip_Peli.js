@@ -239,17 +239,19 @@ $(document).on('click', '#detalles_show', function(e) {
     'display': 'none'
   })
   $('.description').css({
-      'height': 'auto'
+    'max-height': '500px',
+    'transition': 'max-height 1s'
+    
   })
   e.stopPropagation(); 
 });
 
 $(document).on('click', '#detalles_hide', function(e) {
+  $('.description').css({
+      'max-height': '70px'
+  })
   $('#detalles_show').css({
     'display': 'contents'
-  })
-  $('.description').css({
-      'height': '70px'
   })
 })
  
