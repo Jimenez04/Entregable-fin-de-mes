@@ -193,14 +193,20 @@ function Cuerpo(item, gallery_list, reparto){
                     var ima_path =  document.createElement('img');
                     ima_path.src = urlimg + element.profile_path; 
                     ima_path.alt = "cover";
+                    var div_nombreReparto = document.createElement('div');
+                    div_nombreReparto.classList.add("div_nombreReparto");
                     var label_nombre_creditos = document.createElement('label');
+                    label_nombre_creditos.classList.add("label_nombreReparto");
                     label_nombre_creditos.textContent = element.original_name;
+                    var div_interprete = document.createElement('div');
+                    div_interprete.classList.add("div_interprete");
                     var label_nombre_creditosintreprete = document.createElement('label');
                     label_nombre_creditosintreprete.textContent = "Interpretando a: " + element.character;
                     console.log(element);
-                    item_path.append(ima_path, label_nombre_creditos,label_nombre_creditosintreprete);
+                    div_nombreReparto.append(label_nombre_creditos);
+                    div_interprete.append(label_nombre_creditosintreprete);
+                    item_path.append(ima_path, div_nombreReparto, div_interprete);
                     
-
                     gallery_reparto.append(item_path);
                   } catch (error) {
                     
