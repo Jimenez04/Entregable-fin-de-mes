@@ -75,23 +75,6 @@ function goBack() {
                 console.log(err);
               });
 }
-  function ObtenerepartoPelicula(id) {
-    fetch(url + "movie/"+ id +"/credits?api_key="+key +"&language=es" )
-             .then( resultado => {
-               if(resultado.status == 200) {
-                 return resultado.text();
-               } else {
-                 throw "Error en el servidor" 
-               }
-             })
-             .then( resultadotext => {
-               let reparto = JSON.parse(resultadotext).cast;
-               return reparto;
-            })
-             .catch( err => {
-               console.log(err);
-             });
- }
 
 function Cuerpo(item, gallery_list, reparto){
     var Listacategorias = "";
@@ -212,7 +195,10 @@ function Cuerpo(item, gallery_list, reparto){
                     ima_path.alt = "cover";
                     var label_nombre_creditos = document.createElement('label');
                     label_nombre_creditos.textContent = element.original_name;
-                    item_path.append(ima_path, label_nombre_creditos);
+                    var label_nombre_creditosintreprete = document.createElement('label');
+                    label_nombre_creditosintreprete.textContent = "Interpretando a: " + element.character;
+                    console.log(element);
+                    item_path.append(ima_path, label_nombre_creditos,label_nombre_creditosintreprete);
                     
 
                     gallery_reparto.append(item_path);
