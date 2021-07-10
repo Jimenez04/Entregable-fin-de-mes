@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async function(){
    window.addEventListener("orientationchange", function() {  RecargarCuerpo();}, false);
 
 async function RecargarCuerpo(){
-     
+      document.getElementById('text_busqueda').value = '';
        removerhijos();
         if (screen.width > 450 || screen.availHeight < screen.availWidth) {
         ObtenerTodoConCategoria();
