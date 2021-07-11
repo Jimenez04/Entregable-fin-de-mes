@@ -4,8 +4,7 @@
     width:500px; */
 } 
 .efectobuscar input[type=text]{
-	background-image: url("../img/search-solid.svg");
-    /* background: url('../img/search-solid.svg') no-repeat, #a7a6a9 ; */
+    background-image: url("../img/BuscarCel.png");
 	background-size: 25px;
 	background-position: 2px 3px;
 	background-repeat: no-repeat;
@@ -23,8 +22,10 @@
 }
 
 .efectobuscar  input[type=text]:focus {
-    width: 150px;
+    width: 116px;
     background-color: #fff;
+    background-image: url("../img/BuscarCelBlanco.png");
+    text-indent:0px;
 }
 
 /* .efectobuscar  button.btn {
@@ -131,4 +132,3 @@ display: none;
 }
 }
 
-    
