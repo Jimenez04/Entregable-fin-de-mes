@@ -45,6 +45,11 @@
     color: white;
     background-color: rgba(0, 0, 0, .8) !important;
     background-size: cover;
+    max-width: 210px !important;
+    min-width: 210px !important;
+    max-height: 60%;
+    overflow-x: auto;
+
 }
 .ui-widget
 {
@@ -58,13 +63,17 @@
     list-style: none outside none;
     margin: 0;
     padding: 5px;
-    left: 14.4% !important;
+    left: Calc(100% - 230px) !important;
 
 }
 .ui-autocomplete
 {
     cursor: default;
     position: absolute;
+}
+.ui-menu li{
+    width: 100%;
+    border-bottom: 2px solid white !important;
 }
 .ui-menu .ui-menu-item
 {
@@ -99,7 +108,6 @@
 display: none;
 }
 
-
 @media screen and (min-width:450px){
     .ui-menu
         {
@@ -108,11 +116,19 @@ display: none;
             list-style: none outside none;
             margin: 0;
             padding: 5px;
-            left: 80% !important;
+            left: Calc(100% - 320px) !important;
 
         }
         .efectobuscar  input[type=text]:focus {
             width: 300px;
             background-color: #fff;
         }
+        .ui-widget-content
+{
+            max-width: 300px !important;
+            min-width: 300px !important;
+
 }
+}
+
+    
