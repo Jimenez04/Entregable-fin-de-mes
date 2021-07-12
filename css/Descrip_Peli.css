@@ -5,12 +5,13 @@ html, body{
   font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   max-width: 100%;
 }
-
 .btn_volver{
     z-index: 1;
     color: #a7a6a9;
-  }
-
+}
+.div_separador{
+  margin-bottom: 5rem;
+}
 .headerimage {
     background-image:linear-gradient(to left top,#31ffd260,#f4fffb11);
     height:16rem;
@@ -134,6 +135,9 @@ html, body{
   text-decoration: underline;
   cursor: pointer;
 }
+#detalles_hide{
+  display: none;
+}
 .titulo_Fotos{
   font-size: 20px;
   font-weight: 500;
@@ -149,12 +153,15 @@ html, body{
   text-align: center;
   font-weight: 500;
   line-height: 2em;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.103);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .gallery img{
   display: block;
   width: 150px;
   height: 200px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 .gallery img:hover{ 
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;

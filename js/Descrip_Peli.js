@@ -136,21 +136,24 @@ function Cuerpo(item, gallery_list, reparto){
       var etiq_div_description_movie = document.createElement('div');
       etiq_div_description_movie.classList.add("description");
           var etiq_text_descrip = document.createElement('p');
-          var span_descrip = document.createElement('span');
-          span_descrip.classList.add("detalles");
-            span_descrip.setAttribute('id','detalles_hide');
-            span_descrip.textContent = "Ver menos";
+          
           etiq_text_descrip.textContent = item.overview;
 
-      etiq_div_description_movie.append(etiq_text_descrip, span_descrip);
+      etiq_div_description_movie.append(etiq_text_descrip);
     section_article.append(etiq_div_description_movie);
 
+
+   
     var div_span = document.createElement('div');
-    var span_descrip = document.createElement('span');
-    span_descrip.classList.add("detalles");
-            span_descrip.setAttribute('id','detalles_show');
-            span_descrip.textContent = "Detalles";
-    div_span.append(span_descrip);
+    var span_descripHide = document.createElement('span');
+    span_descripHide.classList.add("detalles");
+    span_descripHide.setAttribute('id','detalles_hide');
+    span_descripHide.textContent = "Ver menos";
+    var span_descripShow = document.createElement('span');
+    span_descripShow.classList.add("detalles");
+    span_descripShow.setAttribute('id','detalles_show');
+    span_descripShow.textContent = "Detalles";
+    div_span.append(span_descripHide, span_descripShow);
     section_article.append(div_span);
 
      var div_Imagenes = document.createElement('div');
@@ -215,6 +218,10 @@ function Cuerpo(item, gallery_list, reparto){
                 });
     section_article.append(gallery_reparto);
 
+    var div_separador = document.createElement('div');
+    div_separador.classList.add("div_separador");
+    section_article.append(div_separador);
+
 infohtml.append(section_article);
 
       var divimagen =  document.createElement('div');
@@ -230,17 +237,24 @@ $(document).on('click', '#detalles_show', function(e) {
   $('#detalles_show').css({
     'display': 'none'
   })
+  $('#detalles_hide').css({
+    'display': 'contents'
+  })
   $('.description').css({
     'max-height': '500px',
-    'transition': 'max-height 1s'
-    
+    'transition': 'max-height 1s',
+    'overflow-y': 'scroll'
   })
   e.stopPropagation(); 
 });
 
 $(document).on('click', '#detalles_hide', function(e) {
+  $('#detalles_hide').css({
+    'display': 'none'
+  })
   $('.description').css({
-      'max-height': '70px'
+      'max-height': '70px',
+      'overflow-y': 'hidden'
   })
   $('#detalles_show').css({
     'display': 'contents'
