@@ -48,7 +48,6 @@ var availableTags = [];
 try {
         var image = new Image();
         image.onload = function() {
-            // image exists and is loaded
             $img.attr({
               src: image.src,
               alt: ""

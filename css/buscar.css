@@ -27,14 +27,6 @@
     background-image: url("../img/BuscarCelBlanco.png");
     text-indent:0px;
 }
-
-/* .efectobuscar  button.btn {
-    padding:16px 12px;
-    border-top-right-radius:4px;
-    border-bottom-right-radius: 4px;
-    cursor:not-allowed;
-} */
-
 .ui-corner-all
 {
     -moz-border-radius: 4px 4px 4px 4px;
@@ -89,6 +81,8 @@
     display: flex;
     padding: 3px 3px 3px 3px;
     cursor: pointer;
+    color: #3ed2bf;
+    text-decoration: none !important;
 }
 .ui-menu .ui-menu-item a img
 {
@@ -96,18 +90,16 @@
   height: 80px;
   margin-right: 10px;
 }
-.ui-menu .ui-menu-item :hover
+.ui-menu .ui-menu-item a :hover
 {
-    display: block;
-    padding: 3px 3px 3px 3px;
-    text-decoration: line-through;
-    color: #3ed2bf;
-    cursor: pointer;
-    background-color: ButtonText;
+    color: black !important;
+    text-decoration: underline !important;
 }
-.ui-widget-content a
+
+.ui-widget-content a :hover
 {
-    color: #3ed2bf;
+    color: black !important;
+    text-decoration: underline !important;
 }
 
 .ui-helper-hidden-accessible{
@@ -130,10 +122,28 @@ display: none;
             background-color: #fff;
         }
         .ui-widget-content
-{
+        {
             max-width: 300px !important;
             min-width: 300px !important;
 
-}
+        }
+        .ui-menu .ui-menu-item a img
+        {
+            width: 100px;
+            height: 120px;
+            margin-right: 10px;
+        }
+        .ui-menu .ui-menu-item a :hover
+        {
+            color: black !important;
+        }
+
+       
+        .ui-menu .ui-menu-item a img:hover
+        {
+            width: 150px;
+            height: 170px;
+            margin-right: 10px;
+        }
 }
 
