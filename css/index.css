@@ -24,10 +24,13 @@ footer div{
 background-color: white; /* Cambair */
 }
 .btn_menu button, .btn_buscar button{
-    color: #a7a6a9;
+    color: #3ed2bf;
 }
 .animacion:hover{
-    color: #3ed2bf;
+    color: white;
+}
+.efectobuscar input[type=text]:hover{
+    background-image: url("../img/BuscarCelBlanco.png");
 }
 .justificar_derecha{
     justify-items: right !important;
@@ -320,8 +323,13 @@ hr{
             .menu_dinamico nav ul li a:hover{
                 color: black !important;
             }
-            .btn_buscar button{
-                color: white;
+            .efectobuscar input[type=text]{
+                background-image: url("../img/BuscarCelBlanco.png") !important;
+            }
+            .efectobuscar input[type=text]:hover{
+                /* background-image: url("../img/buscar.png") !important; */
+                border-bottom: black 6px solid;
+
             }
             .duration_movie{
                 display: none !important;
@@ -330,7 +338,7 @@ hr{
                 height:360px;
             } 
             .cuerpo > label{
-                display: inline-block;
+                display: inline-block; 
                 color: black;
                 font-size: 120%;
                 margin-left: 25px;
