@@ -85,7 +85,8 @@
 }
 .ui-menu .ui-menu-item a
 {
-    display: block;
+    margin-left: 5px;
+    display: flex;
     padding: 3px 3px 3px 3px;
     cursor: pointer;
 }
