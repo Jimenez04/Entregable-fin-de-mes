@@ -130,6 +130,9 @@ html, body{
   transition: max-height .5s ease-out;
   overflow: hidden;
 }
+.duration_movie label{
+  padding: 4px !important;
+}
 .detalles{
   color: #3cbcac;
   text-decoration: underline;
