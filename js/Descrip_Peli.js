@@ -113,18 +113,23 @@ function Cuerpo(item, gallery_list, reparto){
 //
       var star_div_clasification_movie = document.createElement('div');
       star_div_clasification_movie.classList.add("calification");
-        var  star_item  = document.createElement('i');
-        star_item.classList.add("fas","fa-star");
-        var  star_item1  = document.createElement('i');
-        star_item1.classList.add("fas","fa-star");
-        var  star_item2  = document.createElement('i');
-        star_item2.classList.add("fas","fa-star");
-        var  star_item3  = document.createElement('i');
-        star_item3.classList.add("fas","fa-star");
-        var  star_item4  = document.createElement('i');
-        star_item4.classList.add("fas","fa-star");
 
-      star_div_clasification_movie.append(star_item,star_item1,star_item2,star_item3,star_item4);
+      var star_div_cali_movie = document.createElement('div');
+      star_div_cali_movie.classList.add("stars-outer");
+
+        var  star_item  = document.createElement('div');
+        star_item.classList.add("stars-inner");
+
+        const starPercentage = (item.vote_average/ 10) * 100;
+        const starPercentageRounded = `${((starPercentage / 10) * 10)}%`;
+        //document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded; 
+        star_item.style.width = starPercentageRounded; 
+        //star_item.style.cssText =  `width: `+starPercentageRounded+ `px; `;
+
+       // obj.style.cssText = 'position:absolute;top:300px;left:300px;width:200px;height:200px;-moz-border-radius:100px;border:1px  solid #ddd;-moz-box-shadow: 0px 0px 8px  #fff;display:none;';
+       star_div_cali_movie.append(star_item);
+
+      star_div_clasification_movie.append(star_div_cali_movie);
          var label_calificacion = document.createElement('label');
          label_calificacion.textContent = item.vote_average;
           var span_calificacion = document.createElement('span');
