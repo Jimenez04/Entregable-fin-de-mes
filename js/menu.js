@@ -11,4 +11,3 @@ $(document).ready(function () {
     $("#menu_dinamico").slideToggle("menu_dinamico_mostrar");
     });
   });
-  

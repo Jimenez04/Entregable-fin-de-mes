@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 html, body {
     height: 100%;
     font-size: calc(.8.5em + .5vw);
     background-image: linear-gradient(to left top, #000000, #100a0a, #1a1310, #211a13, #252116, #242518, #21291b, #1c2d21, #132d27, #092d2d, #042d34, #082b39);
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .container_header{
     grid-template-columns: repeat(3, 1fr);
@@ -160,17 +161,16 @@ max-width: 100%;
 }
 .duration_movie{
     margin-top:1%;
-   
     height: 12% !important;
     width: 100%;
 }
 .duration_movie label{
     padding-top: 3px ;
     background-color: #fb9f4f;
-    width: 20%;
+    width: 15%;
     font-size: .7rem;
-    height: 101%;
-    float: left ;
+    height: 85%;
+    float: left;
     border-radius: 15px;
     text-align: center;
 }

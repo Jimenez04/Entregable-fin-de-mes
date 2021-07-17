@@ -229,9 +229,9 @@ html, body{
   width: 0;
 }
 
-.stars-inner::before {
+.stars-inner::before {  
   font-family: "Font Awesome 5 Free"; transition: all 9s;color: orange;
-  -webkit-text-stroke-width: 0.5px; font-weight: 400; content: "\f005 \f005 \f005 \f005 \f005";
+  -webkit-text-stroke-width: 0.5px; font-weight: 700; content: "\f005 \f005 \f005 \f005 \f005";
 }
 
 .attribution {
