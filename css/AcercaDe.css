@@ -44,12 +44,12 @@ margin-top: 2rem;
 text-align: center;
 }
 
-footer div img{
+.container div img{
     margin-top: 1rem;
     width: 50%;
 }
 footer svg{
-    bottom: -15%;
-    position: relative;
+    bottom:  0;
+    position: fixed;
     left: 0;
 }
