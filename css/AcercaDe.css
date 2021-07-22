@@ -65,6 +65,13 @@ footer svg{
     footer svg{
         bottom: -2rem;
     }
+    #lista{
+        display: flex !important;
+    }
+    .menu_dinamico nav ul li a{
+        color: white !important;
+    }
+
   }
   @media only screen and (min-width: 1000px) and (orientation: landscape){
     footer svg{

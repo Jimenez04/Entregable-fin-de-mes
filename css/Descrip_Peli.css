@@ -288,11 +288,12 @@ html, body{
     .title1{
       display: flex;
       flex-wrap: initial;
-      margin-top: -10rem;
+      margin-top: -8rem;
       margin-left: 18rem;
       margin-bottom: 0.5rem;
       font-size: 28px;
       font-weight: 600;
+      color: white;
     }
     .title1 label{
       display: content;
@@ -322,7 +323,7 @@ html, body{
       margin-left: 18rem;
       font-size: 1rem;
       font-weight: 400;
-      color: black;
+      color: white;
       margin-bottom: 1rem;
       min-height: auto;
       max-height: auto;
@@ -336,7 +337,33 @@ html, body{
     margin-left: 18rem;
     margin-bottom: 10rem;
   }
-
+  #fondo{
+    display: flex;
+    position: absolute;
+    top: 6.5rem;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    right:0; bottom:0; left:0;
+    height: 325px;
+    background: linear-gradient(to right, rgb(1, 2, 26) 35%,rgba(10, 53, 43, 0.801) 90%);
+  }
+  #opacidad{
+    width: 100%;
+    height: 300px;
+    opacity: 5%;
+  }
+  #fondo img{
+    object-fit: cover;
+    max-height: 325px;
+    width: 100%;
+  }
+  #titulo{
+    display: none;
+  }
+  .stars-outer::before{
+    color: white;
+  }
  
 }    
 
@@ -353,6 +380,7 @@ html, body{
 }
 .title1{
   color: white;
+  margin-top: -10.5rem;
 }
   .description{
     margin-right: 18rem;
@@ -413,6 +441,7 @@ html, body{
   .stars-outer::before{
     color: white;
   }
+  
 }
 @media screen and (min-width:450px) and (max-width:824px){  
   .headerimage{
@@ -428,8 +457,13 @@ html, body{
     display: none;
   }
 }
-@media screen and (min-width:800px) and (max-height:1400px) and (max-width:1030px) and (min-height:1000px){
-
+@media screen and (min-width: 825px) and (max-width: 1000px){  
+  .description{
+    font-size: 0.6rem;
+  }
+  .div_detalles{
+    margin-top: 4rem;
+  }
 }
 
 
