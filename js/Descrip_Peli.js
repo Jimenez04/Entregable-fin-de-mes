@@ -150,6 +150,7 @@ function Cuerpo(item, gallery_list, reparto){
 
    
     var div_span = document.createElement('div');
+    div_span.classList.add("div_detalles");
     var span_descripHide = document.createElement('span');
     span_descripHide.classList.add("detalles");
     span_descripHide.setAttribute('id','detalles_hide');

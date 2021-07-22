@@ -4,6 +4,7 @@ html, body{
     background: white !important;
     max-height: 100%;
 }
+
 .container{
     margin: 1rem auto;
     text-align: center;
@@ -53,3 +54,29 @@ footer svg{
     position: fixed;
     left: 0;
 }
+
+@media only screen and (min-width: 768px) and (orientation: landscape){
+    #btn_barra_volver{
+      display: none;
+    }
+    .container_header{
+        background-color:#00C6CF;
+    }
+    footer svg{
+        bottom: -2rem;
+    }
+  }
+  @media only screen and (min-width: 1000px) and (orientation: landscape){
+    footer svg{
+        position: absolute;
+        bottom: -20rem;
+    }
+    .container div img{
+        margin-bottom: 10rem;
+    }
+  }
+@media only screen and (min-height: 1023px) and (orientation: landscape){
+    footer svg{
+        bottom: -10rem;
+    }
+  }

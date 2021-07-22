@@ -310,7 +310,7 @@ hr{
     
          @media only screen and (min-width: 825px) and (orientation: landscape){
              .container_header{
-                 background-color:#00C6CF;
+                 background-color: #00C6CF ;
              }
             body{
                 background-image: none;
@@ -321,7 +321,7 @@ hr{
                 color: white !important;
             }
             .menu_dinamico nav ul li a:hover{
-                color: black !important;
+                color: rgba(255, 255, 255, 0.699) !important;
             }
             .efectobuscar input[type=text]{
                 background-image: url("../img/BuscarCelBlanco.png") !important;
@@ -344,7 +344,7 @@ hr{
                 margin-left: 25px;
             } 
             .animacion:hover{
-                border-bottom: #3ed2bf 3px solid;
+                border-bottom: #fb9f4f 3px solid;
                 color: black !important;
             }
             .contenedor_principal_movie{
